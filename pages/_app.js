@@ -1,21 +1,22 @@
 import Head from "next/head";
-import "../styles/globals.css";
+import "../styles.css";
+
+const fonts1_url = "https://fonts.gstatic.com";
+const fonts2_url = "https://fonts.googleapis.com";
+const family1 = "Roboto:wght@300;400;700";
+const fonts3_url = fonts2_url + "/css2?family=" + family1 + "&display=swap";
+const family2 = "Material+Icons";
+const fonts4_url = fonts2_url + "/icon?family=" + family2;
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-        />
-        <link rel="icon" href="/static/favicon16.png" />
+        <link rel="preconnect" href={fonts1_url} crossOrigin="true" />
+        <link rel="preconnect" href={fonts2_url} />
+        <link rel="stylesheet" href={fonts3_url} />
+        <link rel="stylesheet" href={fonts4_url} />
+        <link rel="icon" href="/favicon16.png" />
       </Head>
       <Component {...pageProps} />
     </>

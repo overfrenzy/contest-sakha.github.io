@@ -12,6 +12,8 @@ jobs:
         run: |
           npm ci
           npm run build
+          touch ./out/.nojekyll
+          echo "contest-sakha.ru" > ./out/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5

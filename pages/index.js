@@ -1,3 +1,7 @@
 export default function HomePage() {
-  return <div>Welcome to Contest Sakha!</div>;
+  return (
+    <>
+      <h1>Welcome to Contest Sakha!</h1>
+    </>
+  );
 }

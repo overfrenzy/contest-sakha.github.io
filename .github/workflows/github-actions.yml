@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Install and Build
         run: |
           npm ci
@@ -16,5 +16,5 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          BRANCH: gh-pages # The branch the action should deploy to.
+          BRANCH: gh-pages
           FOLDER: out

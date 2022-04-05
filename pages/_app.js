@@ -12,6 +12,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Олимпиды по программированию РС(Я)</title>
         <link rel="preconnect" href={fonts1_url} crossOrigin="true" />
         <link rel="preconnect" href={fonts2_url} />
         <link rel="stylesheet" href={fonts3_url} />

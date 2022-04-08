@@ -188,7 +188,7 @@ let data = [
 export default function HomePage() {
   return (
     <>
-      <h1>Tuymaada-2005</h1>
+      <h1>Tuymaada-2016</h1>
       <Link href="/">Главная</Link>
       <h2>Протокол</h2>
       <table className={styles.table}>

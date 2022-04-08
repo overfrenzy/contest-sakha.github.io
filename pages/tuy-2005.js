@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import styles from './tuy-2005.module.css'
+import styles from "./tuy-2005.module.css";
 
 let data = [
   {
@@ -204,18 +204,27 @@ export default function HomePage() {
         <tbody>
           {data.map((elem, i) => (
             <tr>
-              <td>{i+1}</td>
-              <td>{elem.participant_ru} / {elem.participant_en}</td>
+              <td>{i + 1}</td>
+              <td>
+                {elem.participant_ru} / {elem.participant_en}
+              </td>
               <td>{elem.country}</td>
               <td className={styles.value}>{elem.problems1[0]}</td>
               <td className={styles.value}>{elem.problems1[1]}</td>
               <td className={styles.value}>{elem.problems1[2]}</td>
-              <td className={styles.value}>{elem.problems1.reduce((s, v) => s += v, 0)}</td>
+              <td className={styles.value}>
+                {elem.problems1.reduce((s, v) => (s += v), 0)}
+              </td>
               <td className={styles.value}>{elem.problems2[0]}</td>
               <td className={styles.value}>{elem.problems2[1]}</td>
               <td className={styles.value}>{elem.problems2[2]}</td>
-              <td className={styles.value}>{elem.problems2.reduce((s, v) => s += v, 0)}</td>
-              <td className={styles.value}>{elem.problems1.reduce((s, v) => s += v, 0) + elem.problems2.reduce((s, v) => s += v, 0)}</td>
+              <td className={styles.value}>
+                {elem.problems2.reduce((s, v) => (s += v), 0)}
+              </td>
+              <td className={styles.value}>
+                {elem.problems1.reduce((s, v) => (s += v), 0) +
+                  elem.problems2.reduce((s, v) => (s += v), 0)}
+              </td>
               <td className={styles.value}>{elem.place}</td>
             </tr>
           ))}

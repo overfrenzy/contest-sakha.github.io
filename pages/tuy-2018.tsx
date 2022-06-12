@@ -8,7 +8,7 @@ export default function Home(props) {
 		<>
 			<AppBar />
 			<Container>
-				<h1>Tuymaada-2016</h1>
+				<h1>Tuymaada-2018</h1>
 				<h2>Протокол</h2>
 				<table className={styles.table}>
 					<thead>
@@ -73,7 +73,7 @@ export default function Home(props) {
 import fsPromises from 'fs/promises';
 import path from 'path';
 export async function getStaticProps() {
-	const filePath = path.join(process.cwd(), './public/data2016.json');
+	const filePath = path.join(process.cwd(), './public/data2018.json');
 	const jsonData = await fsPromises.readFile(filePath);
 	const objectData = JSON.parse(jsonData.toString());
 

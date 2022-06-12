@@ -17,11 +17,23 @@ export default function HomePage() {
 					<Button href="/tuy-2016">
 						Туймаада-2016
 					</Button>
+					<Button href="/tuy-2017">
+						Туймаада-2017
+					</Button>
+					<Button href="/tuy-2018">
+						Туймаада-2018
+					</Button>
+					<Button href="/tuy-2019">
+						Туймаада-2019
+					</Button>
 					<Button href="/tuy-2021">
 						Туймаада-2021
 					</Button>
 				</ButtonGroup>
 			</Container>
+			<Button href="/table">
+				MUI tables test
+			</Button>
 		</div >
 	);
 }

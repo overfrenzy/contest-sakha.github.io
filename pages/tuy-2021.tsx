@@ -16,20 +16,23 @@ export default function Home(props) {
 							<th rowSpan={2}>№</th>
 							<th rowSpan={2}>ФИО участника / Full name</th>
 							<th rowSpan={2}>Страна / Country</th>
-							<th colSpan={3}>Задания 1 дня / First day problems</th>
-							<th rowSpan={2}>Итого1 / Total1</th>
-							<th colSpan={3}>Задания 2 дня / Second day problems</th>
-							<th rowSpan={2}>Итого2 / Total2</th>
+							<th rowSpan={2}>Команда / Team</th>
+							<th colSpan={5}>Задания 1 дня / First day problems</th>
+							<th colSpan={5}>Задания 2 дня / Second day problems</th>
 							<th rowSpan={2}>Итого / Total</th>
-							<th rowSpan={2}>Место / Place</th>
+							<th rowSpan={2}>Награда / Award</th>
 						</tr>
 						<tr>
-							<th>1</th>
-							<th>2</th>
-							<th>3</th>
-							<th>1</th>
-							<th>2</th>
-							<th>3</th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+							<th>D</th>
+							<th>E</th>
+							<th>F</th>
+							<th>G</th>
+							<th>H</th>
+							<th>I</th>
+							<th>J</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -37,21 +40,20 @@ export default function Home(props) {
 							<tr>
 								<td>{i + 1}</td>
 								<td>
-									{elem.participant_ru} / {elem.participant_en}
+									{elem.participant_ru} <br /> {elem.participant_en}
 								</td>
-								<td>{elem.country}</td>
+								<td>{elem.country_ru}<br />{elem.country_en}</td>
+								<td>{elem.team}</td>
 								<td className={styles.value}>{elem.problems1[0]}</td>
 								<td className={styles.value}>{elem.problems1[1]}</td>
 								<td className={styles.value}>{elem.problems1[2]}</td>
-								<td className={styles.value}>
-									{elem.problems1.reduce((s, v) => (s += v), 0)}
-								</td>
+								<td className={styles.value}>{elem.problems1[3]}</td>
+								<td className={styles.value}>{elem.problems1[4]}</td>
 								<td className={styles.value}>{elem.problems2[0]}</td>
 								<td className={styles.value}>{elem.problems2[1]}</td>
 								<td className={styles.value}>{elem.problems2[2]}</td>
-								<td className={styles.value}>
-									{elem.problems2.reduce((s, v) => (s += v), 0)}
-								</td>
+								<td className={styles.value}>{elem.problems1[3]}</td>
+								<td className={styles.value}>{elem.problems1[4]}</td>
 								<td className={styles.value}>
 									{elem.problems1.reduce((s, v) => (s += v), 0) +
 										elem.problems2.reduce((s, v) => (s += v), 0)}
@@ -78,5 +80,3 @@ export async function getStaticProps() {
 		props: objectData
 	};
 }
-
-//Прототип вывода данных???

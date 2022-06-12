@@ -11,12 +11,16 @@ export default function Home(props) {
 		<div className={styles.content}>
 			<SearchAppBar />
 			<Container sx={{ marginY: 3 }}>
-				<h1>Студенты</h1>
+				<h1>Участники</h1>
 				<Grid container spacing={6}>
 					{students.map((elem) => (
 						<Grid item xs={3}>
 							<Paper elevation={3}>
-
+								<img
+									src={elem.image}
+									alt=""
+									className={styles.img}
+								/>
 								<Box paddingX={1}>
 									<Typography variant="subtitle1" component="h2">
 										{elem.participant_ru}

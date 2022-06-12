@@ -1,0 +1,36 @@
+{
+	"students": [
+		{
+			"participant_ru": "Онческу Костин-Андрей",
+			"participant_en": "Oncescu Costin-Andrei",
+			"country": "Румыния",
+			"problems1": [
+				100,
+				100,
+				20
+			],
+			"problems2": [
+				100,
+				61,
+				90
+			],
+			"place": "1DG"
+		},
+		{
+			"participant_ru": "Жалгасов Асхат",
+			"participant_en": "Zhalgasov Askhat",
+			"country": "Казахстан",
+			"problems1": [
+				100,
+				100,
+				20
+			],
+			"problems2": [
+				100,
+				18,
+				95
+			],
+			"place": "1DG"
+		}
+	]
+}

@@ -32,8 +32,19 @@ export default function Home(props) {
 										}}
 									>
 										<Typography variant="body2" component="p" marginLeft={0.5}>
-											{elem.country}
+											{elem.country_ru}
 										</Typography>
+									</Box>
+									<Box
+										sx={{
+											display: 'flex',
+											alignItems: 'Center',
+										}}
+									>
+										<Typography variant="body2" component="p" marginLeft={0.5}>
+											{elem.place}
+										</Typography>
+
 									</Box>
 								</Box>
 							</Paper>

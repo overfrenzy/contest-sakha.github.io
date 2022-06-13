@@ -10,6 +10,7 @@ import fsPromises from 'fs/promises';
 import path from 'path';
 import styles from "../styles/tuy-2016.module.css";
 import AppBar from '../public/AppBar';
+import Container from '@mui/material/Container';
 
 
 export async function getStaticProps() {
@@ -49,61 +50,63 @@ const columns: readonly Column[] = [
 export default function StickyHeadTable(props) {
 	const students = props.students;
 	return (
-		<Paper sx={{ width: '100%', overflow: 'hidden' }}>
-			<AppBar />
-			<TableContainer sx={{ maxHeight: 440 }}>
-				<Table stickyHeader aria-label="sticky table">
-					<TableHead>
-						<TableRow>
+		<Container>
+			<Paper sx={{ width: '100%', overflow: 'hidden' }}>
+				<AppBar />
+				<TableContainer sx={{ maxHeight: 1100 }}>
+					<Table stickyHeader aria-label="sticky table">
+						<TableHead>
 							<TableRow>
-								<TableCell align="right" colSpan={6}>
-									First Day Problems
-								</TableCell>
-								<TableCell align="center" colSpan={5}>
-									Second Day Problems
-								</TableCell>
+								<TableRow>
+									<TableCell align="right" colSpan={6}>
+										First Day Problems
+									</TableCell>
+									<TableCell align="center" colSpan={5}>
+										Second Day Problems
+									</TableCell>
+								</TableRow>
+								{columns.map((column) => (
+									<TableCell
+										key={column.id}
+										align={column.align}
+										style={{ top: 57, minWidth: column.minWidth }}
+									>
+										{column.label}
+									</TableCell>
+								))}
 							</TableRow>
-							{columns.map((column) => (
-								<TableCell
-									key={column.id}
-									align={column.align}
-									style={{ top: 57, minWidth: column.minWidth }}
-								>
-									{column.label}
-								</TableCell>
+						</TableHead>
+						<TableBody>
+							{students.map((elem, i) => (
+								<tr>
+									<td>{i + 1}</td>
+									<td>
+										{elem.participant_ru} / {elem.participant_en}
+									</td>
+									<td>{elem.country_ru}</td>
+									<td className={styles.value}>{elem.problems1[0]}</td>
+									<td className={styles.value}>{elem.problems1[1]}</td>
+									<td className={styles.value}>{elem.problems1[2]}</td>
+									<td className={styles.value}>
+										{elem.problems1.reduce((s, v) => (s += v), 0)}
+									</td>
+									<td className={styles.value}>{elem.problems2[0]}</td>
+									<td className={styles.value}>{elem.problems2[1]}</td>
+									<td className={styles.value}>{elem.problems2[2]}</td>
+									<td className={styles.value}>
+										{elem.problems2.reduce((s, v) => (s += v), 0)}
+									</td>
+									<td className={styles.value}>
+										{elem.problems1.reduce((s, v) => (s += v), 0) +
+											elem.problems2.reduce((s, v) => (s += v), 0)}
+									</td>
+									<td className={styles.value}>{elem.place}</td>
+								</tr>
 							))}
-						</TableRow>
-					</TableHead>
-					<TableBody>
-						{students.map((elem, i) => (
-							<tr>
-								<td>{i + 1}</td>
-								<td>
-									{elem.participant_ru} / {elem.participant_en}
-								</td>
-								<td>{elem.country}</td>
-								<td className={styles.value}>{elem.problems1[0]}</td>
-								<td className={styles.value}>{elem.problems1[1]}</td>
-								<td className={styles.value}>{elem.problems1[2]}</td>
-								<td className={styles.value}>
-									{elem.problems1.reduce((s, v) => (s += v), 0)}
-								</td>
-								<td className={styles.value}>{elem.problems2[0]}</td>
-								<td className={styles.value}>{elem.problems2[1]}</td>
-								<td className={styles.value}>{elem.problems2[2]}</td>
-								<td className={styles.value}>
-									{elem.problems2.reduce((s, v) => (s += v), 0)}
-								</td>
-								<td className={styles.value}>
-									{elem.problems1.reduce((s, v) => (s += v), 0) +
-										elem.problems2.reduce((s, v) => (s += v), 0)}
-								</td>
-								<td className={styles.value}>{elem.place}</td>
-							</tr>
-						))}
-					</TableBody>
-				</Table>
-			</TableContainer>
-		</Paper>
+						</TableBody>
+					</Table>
+				</TableContainer>
+			</Paper>
+		</Container>
 	);
 }

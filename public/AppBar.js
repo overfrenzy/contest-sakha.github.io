@@ -28,7 +28,7 @@ export default function AAppBar() {
 							Олимпиады
 						</Button>
 					</Typography>
-					<Button href="/Students" variant="contained" color="secondary">
+					<Button href="/students" variant="contained" color="secondary">
 						Участники
 					</Button>
 				</Toolbar>

@@ -1,4 +1,4 @@
-import styles from "../styles/tuy-2016.module.css";
+import styles from "../styles/tables.module.css";
 import Container from '@mui/material/Container';
 import AppBar from "../public/AppBar";
 

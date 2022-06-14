@@ -1,67 +1,36 @@
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import styles from '../styles/index.module.css';
-import fsPromises from 'fs/promises';
-import path from 'path';
 import Container from '@mui/material/Container';
-import SearchAppBar from '../public/AppBar';
-import { Grid, Paper, Typography, Box } from '@mui/material';
+import AppBar from '../public/AppBar';
 
-export default function Home(props) {
-	const students = props.students;
+export default function Home() {
 	return (
 		<div className={styles.content}>
-			<SearchAppBar />
+			<AppBar />
 			<Container sx={{ marginY: 3 }}>
-				<h1>Участники</h1>
-				<Grid container spacing={6}>
-					{students.map((elem) => (
-						<Grid item xs={3}>
-							<Paper elevation={3}>
-								<img
-									src={elem.image}
-									alt=""
-									className={styles.img}
-								/>
-								<Box paddingX={1}>
-									<Typography variant="subtitle1" component="h2">
-										{elem.participant_ru}
-									</Typography>
-									<Box
-										sx={{
-											display: 'flex',
-											alignItems: 'Center',
-										}}
-									>
-										<Typography variant="body2" component="p" marginLeft={0.5}>
-											{elem.country_ru}
-										</Typography>
-									</Box>
-									<Box
-										sx={{
-											display: 'flex',
-											alignItems: 'Center',
-										}}
-									>
-										<Typography variant="body2" component="p" marginLeft={0.5}>
-											{elem.place}
-										</Typography>
-
-									</Box>
-								</Box>
-							</Paper>
-						</Grid >
-					))}
-				</Grid>
+				<h1>Олимпиады по программированию Республики Саха (Якутия)</h1>
+				<ButtonGroup variant="contained" color="secondary">
+					<Button href="/students-2005">
+						Участники-2005
+					</Button>
+					<Button href="/students-2016">
+						Участники-2016
+					</Button>
+					<Button href="/students-2017">
+						Участники-2017
+					</Button>
+					<Button href="/students-2018">
+						Участники-2018
+					</Button>
+					<Button href="/students-2019">
+						Участники-2019
+					</Button>
+					<Button href="/students-2021">
+						Участники-2021
+					</Button>
+				</ButtonGroup>
 			</Container>
 		</div >
 	);
-}
-
-export async function getStaticProps() {
-	const filePath = path.join(process.cwd(), './public/data2021.json');
-	const jsonData = await fsPromises.readFile(filePath);
-	const objectData = JSON.parse(jsonData.toString());
-
-	return {
-		props: objectData
-	};
 }

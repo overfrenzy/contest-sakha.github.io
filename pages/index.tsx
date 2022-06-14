@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import styles from '../styles/index.module.css';
 import Container from '@mui/material/Container';
-import AppBar from '../public/AppBar';
+import AppBar from '../components/AppBar1';
 
 export default function HomePage() {
 	return (
@@ -31,9 +31,6 @@ export default function HomePage() {
 					</Button>
 				</ButtonGroup>
 			</Container>
-			<Button href="/table">
-				MUI tables test
-			</Button>
 		</div >
 	);
 }

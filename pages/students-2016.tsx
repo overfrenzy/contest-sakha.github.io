@@ -2,14 +2,14 @@ import styles from '../styles/index.module.css';
 import fsPromises from 'fs/promises';
 import path from 'path';
 import Container from '@mui/material/Container';
-import SearchAppBar from '../public/AppBar';
+import AppBar from '../components/AppBar2';
 import { Grid, Paper, Typography, Box } from '@mui/material';
 
 export default function Home(props) {
 	const students = props.students;
 	return (
 		<div className={styles.content}>
-			<SearchAppBar />
+			<AppBar />
 			<Container sx={{ marginY: 3 }}>
 				<h1>Участники</h1>
 				<Grid container spacing={6}>
@@ -57,7 +57,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-	const filePath = path.join(process.cwd(), './public/data2016.json');
+	const filePath = path.join(process.cwd(), './shared/data2016.json');
 	const jsonData = await fsPromises.readFile(filePath);
 	const objectData = JSON.parse(jsonData.toString());
 

@@ -9,12 +9,12 @@ import TableRow from '@mui/material/TableRow';
 import fsPromises from 'fs/promises';
 import path from 'path';
 import styles from "../styles/tables.module.css";
-import AppBar from '../public/AppBar';
+import AppBar from '../components/AppBar1';
 import Container from '@mui/material/Container';
 
 
 export async function getStaticProps() {
-	const filePath = path.join(process.cwd(), './public/data2021.json');
+	const filePath = path.join(process.cwd(), './shared/data2021.json');
 	const jsonData = await fsPromises.readFile(filePath);
 	const objectData = JSON.parse(jsonData.toString());
 

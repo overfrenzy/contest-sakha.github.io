@@ -1,6 +1,6 @@
 import styles from "../styles/tables.module.css";
 import Container from '@mui/material/Container';
-import AppBar from "../public/AppBar";
+import AppBar from "../components/AppBar1";
 
 export default function Home(props) {
 	const students = props.students;
@@ -73,7 +73,7 @@ export default function Home(props) {
 import fsPromises from 'fs/promises';
 import path from 'path';
 export async function getStaticProps() {
-	const filePath = path.join(process.cwd(), './public/data2018.json');
+	const filePath = path.join(process.cwd(), './shared/data2018.json');
 	const jsonData = await fsPromises.readFile(filePath);
 	const objectData = JSON.parse(jsonData.toString());
 

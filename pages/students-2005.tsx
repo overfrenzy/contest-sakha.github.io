@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from '../styles/index.module.css';
 import fsPromises from 'fs/promises';
 import path from 'path';
@@ -16,7 +17,7 @@ export default function Home(props) {
 					{students.map((elem) => (
 						<Grid item xs={3}>
 							<Paper elevation={3}>
-								<img
+								<Image
 									src={elem.image}
 									alt=""
 									className={styles.img}

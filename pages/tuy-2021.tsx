@@ -37,7 +37,7 @@ export default function Home(props) {
 					</thead>
 					<tbody>
 						{students.map((elem, i) => (
-							<tr>
+							<tr key={i.toString()}>
 								<td>{i + 1}</td>
 								<td>
 									{elem.participant_ru} <br /> {elem.participant_en}

@@ -1,10 +1,11 @@
-import Image from 'next/image';
-import styles from '../styles/index.module.css';
 import fsPromises from 'fs/promises';
 import path from 'path';
-import Container from '@mui/material/Container';
+
+import Image from 'next/image';
+import { Container, Grid, Paper, Typography, Box } from '@mui/material';
+
 import AppBar from '../components/AppBar2';
-import { Grid, Paper, Typography, Box } from '@mui/material';
+import styles from '../styles/index.module.css';
 
 export default function Home(props) {
 	const students = props.students;
@@ -14,14 +15,12 @@ export default function Home(props) {
 			<Container sx={{ marginY: 3 }}>
 				<h1>Участники</h1>
 				<Grid container spacing={6}>
-					{students.map((elem) => (
-						<Grid item xs={3}>
+					{students.map((elem, i) => (
+						<Grid item xs={3} key={i.toString()}>
 							<Paper elevation={3}>
-								<Image
-									src={elem.image}
-									alt=""
-									className={styles.img}
-								/>
+								<Box className={styles.img}>
+									<Image src={elem.image} alt="" fill />
+								</Box>
 								<Box paddingX={1}>
 									<Typography variant="subtitle1" component="h2">
 										{elem.participant_ru}

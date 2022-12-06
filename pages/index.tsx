@@ -32,24 +32,6 @@ export default function HomePage() {
 					</Button>
 				</ButtonGroup>
 			</Container>
-			<br></br>
-			<br></br>
-			<br></br>
-			<div className={styles.button}>
-				<Link href="https://vsosh.contest-sakha.ru/" passHref={true}>
-					<Button variant="contained" color="primary" size="large">
-						МЭ ВсОШ 2022-23, 7-8 классы
-					</Button>
-				</Link>
-			</div>
-			<br></br>
-			<div className={styles.button}>
-				<Link href="https://vsosh.contest.codeforces.com/" passHref={true}>
-					<Button variant="contained" color="primary" size="large">
-						МЭ ВсОШ 2022-23, 9-11 классы
-					</Button>
-				</Link>
-			</div>
 		</div >
 	);
 }
